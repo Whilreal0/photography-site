@@ -10,17 +10,20 @@
       transition-all
       duration-300
       w-[50vw]
-      
       md:w-[35vw]
       lg:w-[25vw]
       bg-white
     "
   >
     <!-- <img class="absolute w-[10rem] left-5 md:left-10 top-5 md:top-10" :src="customLogo" alt=""> -->
-    <div class="absolute flex items-center justify-between w-full p-3 md:p-10 ">
-      <h1 class=" md:text-xl pt-[.2rem] md:pt-0">
-        <router-link @click.native="$emit('close')" to="/"> Shutter Dream</router-link>
-      </h1>
+    <div class="absolute flex items-center justify-between w-full p-3 md:p-10">
+      <header>
+        <h1 class="md:text-xl pt-[.2rem] md:pt-0">
+          <router-link @click.native="$emit('close')" to="/">
+            Shutter Dream</router-link
+          >
+        </h1>
+      </header>
       <button class="flex p-0 pt[.2]">
         <box-icon
           @click="$emit('close')"
@@ -28,7 +31,6 @@
           size="sm"
           name="x"
         ></box-icon>
-        
       </button>
     </div>
     <ul

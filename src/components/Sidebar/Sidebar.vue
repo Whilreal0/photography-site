@@ -1,9 +1,8 @@
 <template>
   <nav class="fixed right-5 top-5 md:right-10 md:top-10 z-50 cursor-default">
-    
-    <div class="flex items-center cursor-pointer" :class="buttonBounce">
-      <button
-        class="sidebarBtn  md:bg-[#f2f2f2]  md:p-1 flex rounded-md"
+    <div class="flex items-center cursor-pointer">
+      <button id="sidebar"
+        class="sidebarBtn md:bg-[#f2f2f2] md:p-1 flex rounded-md"
         @click="openSidebar"
         :class="openModal ? 'invisible' : 'visible'"
       >
@@ -42,8 +41,6 @@ export default {
   },
   data: () => ({
     isOpen: false,
-    buttonBounce: '',
-    intervalBounce: null
   }),
   methods: {
     openSidebar() {
@@ -59,54 +56,7 @@ export default {
         ? sitebody.classList.add("overflow-hidden")
         : sitebody.classList.remove("overflow-hidden");
     },
-
-    startBouncing(){
-      this.buttonBounce = "bouncing";
-    setTimeout(() => {
-      this.buttonBounce = "";
-      setTimeout(() => {
-        this.startBouncing();
-      }, 20000);
-    }, 5000)
-  }
-
   },
-  computed: {
-    iconSize() {
-      if (window.innerWidth < 992) {
-        return "md";
-      } else {
-        return "35px";
-      }
-    },
-  },
-  created() {
-    this.startBouncing()
-  // this.intervalBounce = setInterval(() => {
-  //   this.buttonBounce = "bouncing";
-  // }, 1000)
-  // setTimeout(() => {
-  //   clearInterval(this.intervalBounce);
-  //   this.buttonBounce = "";
-  // }, 60000);
-}
-
+ 
 };
 </script>
-<style>
-@keyframes bouncing {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.bouncing {
-  animation: bouncing 0.5s ease-in-out infinite;
-}
-</style>
