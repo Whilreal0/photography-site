@@ -10,7 +10,13 @@ import Sidebar from '@/components/Sidebar/Sidebar'
 export default {
   components:{
     Sidebar,
-  }
+  },
+  data:()=>({
+    showSidebar: true
+  }),
+  
+  
+
 };
 </script>
 
