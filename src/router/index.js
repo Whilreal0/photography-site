@@ -4,6 +4,8 @@ import HomeView from "@/views/HomeView";
 import WeddingView from "@/views/WeddingView";
 import NatureView from "@/views/NatureView";
 import AboutView from "@/views/AboutView";
+import PageNotFound from "@/views/PageNotFound";
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -27,7 +29,17 @@ const routes = [
     name: "about",
     component: AboutView,
   },
+  {
+    path: "/about",
+    name: "about",
+    component: AboutView,
+  },
 
+  {
+    path: '*',
+    name: 'page-not-found',
+    component: PageNotFound
+  }
 ];
 
 const router = new VueRouter({
