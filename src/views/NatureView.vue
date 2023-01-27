@@ -1,6 +1,11 @@
 <template>
   <section class="flex flex-col md:px-16 justify-center items-center text-2xl">
-    <Modal v-if="openModal" :openModal="false" :items="items" />
+    <Modal
+      v-if="openModal"
+      :openModal="false"
+      :items="items"
+      :initialSlide="initialSlide"
+    />
     <h1 class="md:text-3xl mt-5">Nature</h1>
     <div class="grid md:grid-cols-3 gap-4 md:px-10 p-8">
       <div v-for="(item, index) in items" :key="index">
@@ -23,40 +28,39 @@ export default {
     Modal,
   },
   data: () => ({
-    imgZoom : false,
-    selectedID: 0,
+    initialSlide: 0,
     openModal: false,
     items: [
       {
-        alt: 'nature',
+        alt: "nature",
         path: [require("@/assets/images/Nature/nature.jpeg")],
       },
       {
-        alt: 'nature1',
+        alt: "nature1",
         path: [require("@/assets/images/Nature/nature1.jpeg")],
       },
       {
-        alt: 'nature2',
+        alt: "nature2",
         path: [require("@/assets/images/Nature/nature2.jpeg")],
       },
       {
-        alt: 'nature3',
+        alt: "nature3",
         path: [require("@/assets/images/Nature/nature3.jpeg")],
       },
       {
-        alt: 'nature4',
+        alt: "nature4",
         path: [require("@/assets/images/Nature/nature4.jpeg")],
       },
       {
-        alt: 'nature5',
+        alt: "nature5",
         path: [require("@/assets/images/Nature/nature5.jpeg")],
       },
     ],
   }),
-  methods:{
+  methods: {
     showModal(index) {
-      this.selectedID = index;
-      
+      this.initialSlide = index;
+
       this.openModal = !this.openModal;
       let sitebody = document.body;
 
@@ -82,7 +86,7 @@ export default {
 </script>
 
 <style>
-.transform-scale-200{
-    transform: scale(2);
+.transform-scale-200 {
+  transform: scale(2);
 }
 </style>

@@ -13,18 +13,20 @@
     "
   >
     <Carousel
+    :navigateTo="initialSlide"
       :resistanceCoef="0"
       :centerMode="true"
       :perPage="1"
       :navigationEnabled="true"
       :paginationEnabled="false"
       
+      
     >
-      <slide v-for="(item,i) in items" :key="i">
-        <img
+      <slide v-for="(item,index) in items" :key="index" >
+        <img 
           class="object-cover bg-center h-[80vh] w-full relative"
           :src="item.path"
-          alt=""
+          :alt="item.path"
         />
       </slide>
     </Carousel>
@@ -32,14 +34,16 @@
 </template>
 
 <script>
+
 import { Carousel, Slide } from "vue-carousel";
 export default {
-  props: ["items"],
-
+  props: ["items", 'initialSlide'],
   components: {
     Carousel,
     Slide,
   },
+  
+  
   
 };
 </script>

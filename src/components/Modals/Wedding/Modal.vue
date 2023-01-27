@@ -12,7 +12,7 @@
     </transition>
     <Carousel
       :openModal="openModal"
-      :selectedItem="selectedItem"
+      :initialSlide="initialSlide"
       :items="items"
     />
     <button
@@ -33,7 +33,7 @@ export default {
     ModalOverlay,
     Carousel,
   },
-  props: ["selectedItem", "items", "openModal"],
+  props: ["initialSlide", "items", "openModal"],
   methods: {
     closeModal() {
       EventBus.$emit("closeModal");
