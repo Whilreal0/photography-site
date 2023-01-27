@@ -8,7 +8,7 @@
           @click="showModal(index)"
           class="cursor-pointer h-full rounded-sm md:rounded-md"
           :src="item.path"
-          
+          :alt="item.alt"
         />
       </div>
     </div>
@@ -28,27 +28,27 @@ export default {
     openModal: false,
     items: [
       {
-        id: 1,
+        alt: 'nature',
         path: [require("@/assets/images/Nature/nature.jpeg")],
       },
       {
-        id: 2,
+        alt: 'nature1',
         path: [require("@/assets/images/Nature/nature1.jpeg")],
       },
       {
-        id: 3,
+        alt: 'nature2',
         path: [require("@/assets/images/Nature/nature2.jpeg")],
       },
       {
-        id: 4,
+        alt: 'nature3',
         path: [require("@/assets/images/Nature/nature3.jpeg")],
       },
       {
-        id: 5,
+        alt: 'nature4',
         path: [require("@/assets/images/Nature/nature4.jpeg")],
       },
       {
-        id: 5,
+        alt: 'nature5',
         path: [require("@/assets/images/Nature/nature5.jpeg")],
       },
     ],

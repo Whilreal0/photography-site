@@ -17,7 +17,8 @@
           
           class="cursor-pointer rounded-sm md:rounded-md"
           :src="item.path"
-          alt=""
+          :alt="item.alt"
+          
         />
       </div>
     </div>
@@ -39,27 +40,27 @@ export default {
     openModal: false,
     items: [
       {
-        id: 1,
+        alt: 'wedding',
         path: [require("@/assets/images/wedding/wedding.jpeg")],
       },
       {
-        id: 2,
+        alt: 'wedding1',
         path: [require("@/assets/images/wedding/wedding1.jpeg")],
       },
       {
-        id: 3,
+        alt: 'wedding2',
        path: [require("@/assets/images/wedding/wedding2.jpeg")],
       },
       {
-        id: 4,
+        alt: 'wedding3',
         path: [require("@/assets/images/wedding/wedding3.jpeg")],
       },
       {
-        id: 5,
+        alt: 'wedding4',
         path: [require("@/assets/images/wedding/wedding4.jpeg")],
       },
       {
-        id: 5,
+        alt: 'wedding5',
         path: [require("@/assets/images/wedding/wedding5.jpeg")],
       },
 
